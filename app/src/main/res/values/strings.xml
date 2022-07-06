@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">To DO List</string>
+    <string name="title1">Finish Project</string>
+    <string name="detail1">The project is to be pass on friday</string>
+    <string name="title2">Fix phone</string>
+    <string name="detail2">Fix the phone that is given to me</string>
+    <string name="title3">Buy food</string>
+    <string name="detail3">Dont forget to buy food</string>
+    <string name="Task" />
+</resources>
