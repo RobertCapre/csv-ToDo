@@ -10,6 +10,10 @@ object DataObject {
         listData.add(DataToDoListNew(title, details))
     }
 
+    fun removeData(title: String, details: String) {
+        listData.remove(DataToDoListNew(title, details))
+    }
+
     fun getAllData(): List<DataToDoListNew> {
         return listData
     }

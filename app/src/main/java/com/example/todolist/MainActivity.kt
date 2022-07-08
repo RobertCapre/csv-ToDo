@@ -4,6 +4,8 @@ import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -25,12 +27,22 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
         with(binding) {
             val myDataset = Datasource().loadToDoList()
             val recyclerView = findViewById<RecyclerView>(R.id.toDoList)
+            val todoAdapter = ToDoListAdapter(DataObject.getAllData())
+            todoAdapter.setOnItemClickListener {
+                Log.d("From Main", it.title)
+                val intent = Intent(this@MainActivity, ViewDetailActivity::class.java).apply {
+                    putExtra(ViewDetailActivity.EXTRA_MESSAGE, it)
+                }
+                startActivity(intent)
+
+            }
 
             recyclerView.apply {
-                adapter = ToDoListAdapter(DataObject.getAllData())
+                adapter = todoAdapter
                 layoutManager = LinearLayoutManager(this@MainActivity, LinearLayoutManager.VERTICAL, false)
                 setHasFixedSize(true)
             }
