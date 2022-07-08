@@ -4,16 +4,20 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.provider.AlarmClock.EXTRA_MESSAGE
+import android.sax.EndElementListener
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.Data.Datasource
 import com.example.todolist.R
 import com.example.todolist.TitleAndDetailActivity
+import com.example.todolist.ViewDetailActivity
 import com.example.todolist.databinding.ActivityMainBinding
 import com.example.todolist.databinding.ItemTodolistBinding
 import com.example.todolist.model.DataToDoList
@@ -38,29 +42,22 @@ class ToDoListAdapter(
             with(holder.binding) {
                 tvTitle.text = item.title
                 tvDetails.text = item.details
-//                setOnClickListener {
-//                    val intent = Intent(context,TitleAndDetailActivity::class.java)
-//                    intent.putExtra(EXTRA_MESSAGE1, position)
-//                    context.startActivities(arrayOf(intent))
-//                }
+
+
+
+            }
+            setOnClickListener {
+                Log.d("Text", item.title.toString())
+                onItemClickListener?.let {
+                    it(item)
+                }
+
             }
 
+
+
+
         }
-
-
-
-
-
-//        val item = dataset[position]
-//        holder.itemView.apply {
-//            with(holder.binding) {
-//                tvTitle.text = context.resources.getString(item.resourceTitle)
-//                tvDetails.text = context.resources.getString(item.resourceDetail)
-//
-//
-//            }
-//
-//        }
 
     }
 
@@ -68,12 +65,10 @@ class ToDoListAdapter(
         return dataset.size
     }
 
+    private var onItemClickListener: ((DataToDoListNew) -> Unit)? = null
 
-
-    companion object {
-        const val EXTRA_MESSAGE1 = "MESSAGE1"
-        const val EXTRA_MESSAGE2 = "MESSAGE2"
+    fun  setOnItemClickListener(listener: (DataToDoListNew) -> Unit) {
+        onItemClickListener = listener
     }
-
 
 }
