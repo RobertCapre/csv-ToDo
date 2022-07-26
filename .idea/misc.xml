@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/robert.capre/Desktop/git-repository/csv-ToDo/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/robert.capre/Desktop/git-repository/csv-ToDo/app/src/main/res/layout/activity_title_and_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/robert.capre/Desktop/git-repository/csv-ToDo/app/src/main/res/layout/activity_view_detail.xml" value="0.264" />
+        <entry key="..\:/Users/robert.capre/Desktop/git-repository/csv-ToDo/app/src/main/res/layout/item_todolist.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/robert.capre/Desktop/git-repository/csv-ToDo/app/src/main/res/layout/sample.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/robert.capre/Desktop/new/exercise/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/robert.capre/Desktop/new/exercise/app/src/main/res/layout/activity_title_and_detail.xml" value="0.264" />
         <entry key="..\:/Users/robert.capre/Desktop/new/exercise/app/src/main/res/layout/item_todolist.xml" value="0.25" />
