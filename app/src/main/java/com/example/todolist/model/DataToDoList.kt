@@ -1,7 +1,10 @@
 package com.example.todolist.model
 
-data class DataToDoList(
-    val resourceTitle: Int,
-    val resourceDetail: Int
-)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
+data class DataToDoList(
+    var title: String,
+    var details: String
+): Parcelable

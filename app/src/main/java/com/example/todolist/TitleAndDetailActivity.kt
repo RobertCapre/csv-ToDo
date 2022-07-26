@@ -3,10 +3,7 @@ package com.example.todolist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.todolist.Adapter.ToDoListAdapter
 import com.example.todolist.Data.DataObject
-import com.example.todolist.Data.Datasource
-import com.example.todolist.databinding.ActivityMainBinding
 import com.example.todolist.databinding.ActivityTitleAndDetailBinding
 
 class TitleAndDetailActivity : AppCompatActivity() {
@@ -31,25 +28,6 @@ class TitleAndDetailActivity : AppCompatActivity() {
 
         }
 
-    }
-
-    private fun sendInput() {
-
-
-
-
-//        val intent = Intent(this@TitleAndDetailActivity, ToDoListAdapter::class.java).apply {
-//            putExtra(ToDoListAdapter.EXTRA_MESSAGE1, binding.inputTitle.text.toString())
-//            putExtra(ToDoListAdapter.EXTRA_MESSAGE2, binding.inputDetails.text.toString())
-//        }
-//        startActivity(intent)
-    }
-
-
-
-    companion object {
-        const val EXTRA_MESSAGE1 = "MESSAGE1"
-        const val EXTRA_MESSAGE2 = "MESSAGE2"
     }
 }
 

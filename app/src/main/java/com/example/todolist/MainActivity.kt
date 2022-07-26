@@ -1,21 +1,14 @@
 package com.example.todolist
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todolist.Adapter.ToDoListAdapter
 import com.example.todolist.Data.DataObject
-import com.example.todolist.Data.Datasource
 import com.example.todolist.databinding.ActivityMainBinding
-import com.example.todolist.databinding.ItemTodolistBinding
-import com.example.todolist.model.DataToDoList
-import com.example.todolist.model.DataToDoListNew
 
 class MainActivity : AppCompatActivity() {
 
@@ -29,7 +22,6 @@ class MainActivity : AppCompatActivity() {
 
 
         with(binding) {
-            val myDataset = Datasource().loadToDoList()
             val recyclerView = findViewById<RecyclerView>(R.id.toDoList)
             val todoAdapter = ToDoListAdapter(DataObject.getAllData())
             todoAdapter.setOnItemClickListener {
@@ -61,13 +53,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
-
-
-    companion object {
-        const val EXTRA_MESSAGE1 = "MESSAGE1"
-        const val EXTRA_MESSAGE2 = "MESSAGE2"
-    }
 }
 
 

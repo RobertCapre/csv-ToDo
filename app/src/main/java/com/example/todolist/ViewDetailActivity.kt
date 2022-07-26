@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.todolist.Data.DataObject
 import com.example.todolist.databinding.ActivityViewDetailBinding
-import com.example.todolist.model.DataToDoListNew
+import com.example.todolist.model.DataToDoList
 
 class ViewDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityViewDetailBinding
@@ -13,7 +13,7 @@ class ViewDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityViewDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val todo = intent.getParcelableExtra<DataToDoListNew>(EXTRA_MESSAGE)
+        val todo = intent.getParcelableExtra<DataToDoList>(EXTRA_MESSAGE)
         todo?.let {
             with(binding) {
                 val storeTitle = it.title
